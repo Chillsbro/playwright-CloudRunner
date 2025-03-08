@@ -1,0 +1,30 @@
+{
+  "name": "pwdockerlocaltest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:content-validation": "npx playwright test tests/content-validation/",
+    "test:user-flows": "npx playwright test tests/user-flows/",
+    "test:interactions": "npx playwright test tests/interactions/",
+    "test:sharded": "ts-node src/run-sharded-tests.ts",
+    "test:sharded:content-validation": "ts-node src/run-sharded-tests.ts content-validation",
+    "test:sharded:user-flows": "ts-node src/run-sharded-tests.ts user-flows",
+    "test:sharded:interactions": "ts-node src/run-sharded-tests.ts interactions",
+    "docker:build": "docker-compose -f docker/docker-compose.yml build",
+    "docker:run:all": "docker-compose -f docker/docker-compose.yml up",
+    "docker:run:content-validation": "docker-compose -f docker/docker-compose.yml up content-validation",
+    "docker:run:user-flows": "docker-compose -f docker/docker-compose.yml up user-flows",
+    "docker:run:interactions": "docker-compose -f docker/docker-compose.yml up interactions"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Docker-based Playwright Cloud runner with dynamic sharding",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
