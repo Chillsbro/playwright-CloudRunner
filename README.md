@@ -2,6 +2,20 @@
 
 This project provides a solution for running Playwright tests in Docker containers, separated by context with dynamic sharding.
 
+##Overview
+
+Test Organization: Tests are separated into three distinct contexts (content-validation, user-flows, and interactions)
+
+Dynamic Test Sharding: Automatically calculates optimal number of shards based on test count and configured shard size
+
+Flexible Execution: Run tests locally with or without sharding, or in Docker containers
+
+Sequential Shard Execution: Runs each shard sequentially while continuing even if a shard fails
+
+Docker Integration: Tests run sharded, in separate, context-specific Docker containers.
+
+CLI Interface: Command-line interface for selecting and running specific test contexts
+
 ## Project Structure
 
 The project assumes the following structure:
