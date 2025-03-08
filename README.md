@@ -2,7 +2,7 @@
 
 This project provides a solution for running Playwright tests in Docker containers, separated by context with dynamic sharding.
 
-##Overview
+## Overview
 
 Test Organization: Tests are separated into three distinct contexts (content-validation, user-flows, and interactions)
 
