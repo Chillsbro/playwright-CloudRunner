@@ -7,10 +7,8 @@ services:
     volumes:
       - ..:/app
     ipc: host
-    # Set exit-code-from to ensure Docker respects the exit code from the command
     command: >-
       sh -c "npx ts-node src/run-sharded-tests.ts content-validation"
-    # Ensure container stops when the command exits
     restart: "no"
 
   # User Flows Tests
@@ -21,10 +19,8 @@ services:
     volumes:
       - ..:/app
     ipc: host
-    # Set exit-code-from to ensure Docker respects the exit code from the command
     command: >-
       sh -c "npx ts-node src/run-sharded-tests.ts user-flows"
-    # Ensure container stops when the command exits
     restart: "no"
 
   # Interactions Tests
@@ -35,8 +31,6 @@ services:
     volumes:
       - ..:/app
     ipc: host
-    # Set exit-code-from to ensure Docker respects the exit code from the command
     command: >-
       sh -c "npx ts-node src/run-sharded-tests.ts interactions"
-    # Ensure container stops when the command exits
     restart: "no"
