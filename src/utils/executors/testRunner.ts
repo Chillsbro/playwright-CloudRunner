@@ -5,7 +5,6 @@ import { countTestFiles } from "../file/fileUtils";
 import { calculateShards } from "../shard/shardUtils";
 import { getShardConfig } from "../../config/shardConfig";
 
-
 export function runShard(
   contextName: string,
   shardIndex: number,
@@ -44,13 +43,11 @@ export function runShard(
   }
 }
 
-
 export function runTestsForContext(contextName: string): boolean {
   const config = getShardConfig(contextName);
   if (!config) {
     console.error(`Unknown context: ${contextName}`);
     process.exit(1);
-    return false; 
   }
 
   const totalTests = countTestFiles(config.testDir);
